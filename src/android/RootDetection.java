@@ -43,8 +43,24 @@ public class RootDetection extends CordovaPlugin {
     }
 
     private boolean checkFilePath() {
-        String[] paths = { "/sbin/su", "/system/bin/su", "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/system/sd/xbin/su",
-                "/system/bin/failsafe/su", "/data/local/su" };
+        String[] paths = { 
+                          "/sbin/su",
+                          "/system/bin/su",
+                          "/system/xbin/su",
+                          "/data/local/xbin/su",
+                          "/data/local/bin/su",
+                          "/system/sd/xbin/su",
+                          "/system/bin/failsafe/su",
+                          "/data/local/su",
+                          "/data/local/bin/",
+                          "/data/local/xbin/",
+                          "/system/bin",
+                          "/system/sbin",
+                          "/system/xbin",
+                          "/vendor/bin",
+                          "/sbin",
+                          "/etc",
+                         };
         for (String path : paths) {
             if (new File(path).exists()) return true;
         }
